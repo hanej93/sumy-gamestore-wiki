@@ -1,0 +1,103 @@
+site_name: 수미 게임스토어 v3 위키
+site_description: 레거시 게임 쇼핑몰을 Kotlin·Spring Boot 4로 다시 만든 과정과 설계 기록
+docs_dir: docs
+use_directory_urls: true
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 어두운 화면으로
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 밝은 화면으로
+  icon:
+    logo: material/gamepad-variant
+
+plugins:
+  - search:
+      lang:
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - 홈: index.md
+  - 프로젝트:
+      - overview/index.md
+      - 레거시 분석: overview/legacy-analysis.md
+      - 화면: overview/screens.md
+      - 로드맵: overview/roadmap.md
+  - 백엔드:
+      - 아키텍처: backend/architecture.md
+      - 모듈 구조: backend/modules.md
+      - API: backend/api.md
+      - 데이터 모델: backend/data-model.md
+      - 기능별 문서:
+          - backend/domains/index.md
+          - 회원·인증: backend/domains/member.md
+          - 카탈로그: backend/domains/catalog.md
+          - 주문·결제: backend/domains/order-payment.md
+          - 라이브러리·위시리스트: backend/domains/library-wishlist.md
+          - 리뷰·신고: backend/domains/review-report.md
+          - 문의·공지: backend/domains/inquiry-news.md
+          - 관리자: backend/domains/admin.md
+          - 알림 서비스: backend/domains/notification.md
+          - 게이트웨이: backend/domains/gateway.md
+  - 프론트엔드:
+      - frontend/index.md
+      - 데이터·캐시·인증: frontend/data-fetching.md
+      - API 계약: frontend/api-contract.md
+      - E2E 테스트: frontend/e2e.md
+  - 엔지니어링:
+      - 기술 결정: engineering/tech-decisions.md
+      - 품질: engineering/quality.md
+      - AI 협업: engineering/ai-workflow.md
+  - 트러블슈팅:
+      - troubleshooting/index.md
+      - 실제로 띄우니 안 됐다: troubleshooting/01-it-compiles-but.md
+      - 이중 결제: troubleshooting/02-double-payment.md
+      - 가끔 실패하는 테스트: troubleshooting/03-flaky-rate-limit-test.md
+      - 1970년 날짜: troubleshooting/04-spec-vs-response.md
+  - 작업 이력:
+      - history/index.md
+      - 결정 기록: history/decisions.md
