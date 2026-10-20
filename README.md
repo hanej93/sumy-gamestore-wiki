@@ -1,3 +1,5 @@
+[![수미 게임스토어 v3](docs/assets/banner.png)](https://hanej93.github.io/sumy-gamestore-wiki/)
+
 # 수미 게임스토어 v3 위키
 
 예전에 만든 게임 쇼핑몰(Java 8, Spring Boot 2.7, JSP, MyBatis)을 **Kotlin과 Spring Boot 4로 처음부터 다시 만들고 있는** 개인 프로젝트의 설계·개발 기록입니다.
